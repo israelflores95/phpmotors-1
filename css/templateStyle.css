@@ -1,0 +1,383 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Yusei Magic', sans-serif;
+}
+
+body {
+    background-image: url('/phpmotors/images/site/checkerboard.jpg');
+    background-size: contain;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+#myAccount {
+    float: right;
+    padding: 9px 1px;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 15px 2px 6px 2px;
+    color: black;
+}
+
+header a#myAccount:hover {
+    color: #4c96d7;
+    font-size: 115%;
+}
+
+#myLogout {
+    float: right;
+    padding: 9px 1px;
+    font-size: 15px;
+    text-decoration: none;
+    margin: 15px 2px 6px 2px;
+    color: black;
+}
+
+header a#myLogout:hover {
+    color: #4c96d7;
+    font-size: 115%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #3a3a3a;
+    overflow: hidden;
+    /* With the hidden value, the overflow is clipped, and the rest of the content is hidden */
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    padding: 4px;
+    color: white;
+    text-decoration: none;
+    transition: transform .2s;
+}
+
+li a:hover {
+    background-color: #4c96d7;
+    transform: scale(1.15);
+}
+
+#wrapper {
+    background-color: white;
+    border: 5px solid #4c96d7;
+    border-radius: 10px;
+    margin: 25px 10px 10px 10px;
+}
+
+.loginForm {
+    margin: 5px 10px;
+}
+
+.loginForm input[type=text] {
+    border: 2px solid #4c96d7;
+    border-radius: 4px;
+}
+
+#signInButton {
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 165px;
+    margin: 8px 0px;
+    border-radius: 4px;
+    border: none;
+}
+
+.registerForm {
+    margin: 5px 10px;
+}
+
+.registerForm input[type=text] {
+    border: 2px solid #4c96d7;
+    border-radius: 4px;
+}
+
+.updateAccountForm {
+    margin: 5px 10px;
+}
+
+.updateAccountForm input[type=text] {
+    border: 2px solid #4c96d7;
+    border-radius: 4px;
+}
+
+.updatePasswordForm {
+    margin: 5px 10px;
+}
+
+.updatePasswordForm input[type=text] {
+    border: 2px solid #4c96d7;
+    border-radius: 4px;
+}
+
+#registerButton {
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 165px;
+    margin: 8px 0px;
+    border-radius: 4px;
+    border: none;
+}
+
+#updateAccountButton {
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 165px;
+    margin: 8px 0px;
+    border-radius: 4px;
+    border: none;
+}
+
+#updatePasswordButton {
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 165px;
+    margin: 8px 0px;
+    border-radius: 4px;
+    border: none;
+}
+
+/* for "add-classification page" */
+.addClassificationForm {
+    margin: 5px 10px;
+}
+
+.addClassificationForm input[type=text] {
+    border: 2px solid #4c96d7;
+    border-radius: 4px;
+}
+
+/* for "add-vehicle page" */
+.addVehicleForm {
+    margin: 5px 10px;
+}
+
+.addVehicleForm input[type=text] {
+    border: 2px solid #4c96d7;
+    border-radius: 4px;
+}
+
+/* for the submit button on "add-classification" & "add-vehicle" pages */
+#submit {
+    background-color: red;
+    color: white;
+    height: 30px;
+    width: 165px;
+    margin: 8px 0px;
+    border-radius: 4px;
+    border: none;
+
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+}
+
+hr {
+    height: 15px;
+    width: 100%;
+    border: 0;
+    border-top: 3px solid black;
+}
+
+/* for vehicle-management page */
+.vehicle-management {
+    margin: 10px 10px;
+}
+
+.vehicle-management ul {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+}
+
+.vehicle-management ul li a {
+    color: black;
+
+}
+
+.vehicle-management ul li a:hover {
+    background-color: #4c96d7;
+    transform: none;
+}
+
+.adminList ul {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    /* width: 300px; */
+}
+
+
+/* For vehicle display in classification view */
+#inv-display {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+#inv-display li {
+    margin-bottom: .5em;
+    border: 1px #ccc solid;
+    list-style-type: none;
+    flex: 1 1 auto;
+}
+
+#inv-display li img {
+    max-width: 100%;
+}
+
+/* For vehicle display in classification view ends*/
+
+.vehicle-display ul {
+    background-color: white;
+}
+
+.vehicle-display ul li a:hover {
+    background-color: white;
+    transform: none;
+}
+
+.vehicle-display ul li a {
+    color: black;
+    padding: 0;
+    margin: 0;
+}
+
+.vehicle-details {
+    background-color: #D8D8D8;
+    padding: 8px;
+}
+
+.vehicle-stock {
+    background-color: #D8D8D8;
+    padding: 8px;
+}
+
+.specific-vehicle {
+    padding: 8px;
+}
+
+.thumbnail-image {
+    transition: transform .2s;
+    /* Animation */
+}
+
+.thumbnail-image:hover {
+    transform: scale(1.5);
+    /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+
+/* For Client Review at admin.php */
+.clientReivew-display ul {
+    background-color: white;
+}
+
+.clientReivew-display ul li {
+    margin-right: 30px;
+    margin-bottom: 5px;
+}
+
+.clientReivew-display ul li a:hover {
+    background-color: white;
+    transform: none;
+}
+
+.clientReivew-display ul li a {
+    color: black;
+    padding: 0;
+    margin: 0;
+    display:inline;
+    text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+
+    #myAccount {
+        padding: 7px 6px;
+        font-size: 20px;
+    }
+
+    header a#myAccount:hover {
+        font-size: 150%;
+    }
+
+    li a {
+        padding: 8px;
+        font-size: 25px;
+    }
+
+    #wrapper {
+        margin: 50px 100px 200px 100px;
+    }
+
+    footer {
+        font-size: 15px;
+    }
+
+    /* For vehicle display in classification view */
+    #inv-display {
+        flex-flow: row wrap;
+        justify-content: flex-start;
+    }
+
+    #inv-display h2 {
+        font-size: 1rem;
+    }
+
+    #inv-display li {
+        max-width: 200px;
+        flex: 1 0 auto;
+        text-align: center;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    #inv-display div {
+        width: 100%;
+    }
+
+    .clientReivew-display ul li a {
+        color: black;
+        padding: 0;
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .clientReivew-display ul li {
+        margin-right: 200px;
+        margin-bottom: 5px;
+    }
+
+    /* For vehicle display in classification view ends*/
+}
