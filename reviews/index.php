@@ -37,12 +37,17 @@ switch ($action) {
         date_default_timezone_set("America/Denver");
         $d = strtotime("now");
         $reviewDate = date("Y-m-d H:i:s", $d);
-        
+
         // $pageInvId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
+
+        // display the form again, so they can submit another review if they want
+        $reviewForm = createReviewForm($screenName, $invId, $clientId);
 
         // Check for missing data
         if (empty($screenName) || empty($reviewText)) {
-            $_SESSION['submitMessage'] = '<p style="color:red;">Please provide information for all empty form fields.</p>';
+            // $_SESSION['submitMessage'] 
+            $specificVehicleReviewData = getSpecificVehicleReviews($invId); // check if the vehicle has any data or not, display the "Be the first to write..." if it is empty
+            $submitMessage = '<p style="color:red;">Please provide information for the review text field.</p>';
             include '../view/vehicle-detail.php';
             exit;
         }
@@ -50,8 +55,7 @@ switch ($action) {
         // Send the data to the model
         $submitReviewOutcome = submitReview($reviewText, $reviewDate, $invId, $clientId);
 
-        // display the form again, so they can submit another review if they want
-        $reviewForm = createReviewForm($screenName, $invId, $clientId);
+
 
         if ($submitReviewOutcome === 1) {
             // $_SESSION['submitMessage'] = "<p style='color:green;'>Thanks for the review. It is displayed below!</p>";
@@ -71,7 +75,8 @@ switch ($action) {
             include '../view/vehicle-detail.php';
             exit;
         } else {
-            $_SESSION['submitMessage'] = "<p style='color:red;'>Sorry, the review submission failed. Please try again.</p>";
+            // $_SESSION['submitMessage'] 
+            $submitMessage  = "<p style='color:red;'>Sorry, the review submission failed. Please try again.</p>";
             include '../view/vehicle-detail.php';
             exit;
         }
