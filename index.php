@@ -16,16 +16,6 @@ $classifications = getClassifications();
 // new way, create the nav bar in the functions.php which can be used by all controllers
 $navList = createNavBar($classifications);
 
-// build a navigation bar using the $classifications array => old way
-// $navList = '<ul>';
-// $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-// foreach ($classifications as $classification) {
-//     $navList .= "<li><a href='/phpmotors/index.php?action=".urlencode($classification['classificationName'])."' 
-//     title='View our $classification[classificationName] product line'>
-//     $classification[classificationName]</a></li>";
-// }
-// $navList .= '</ul>';
-
 $myAccountLink = '<a id="myAccount" href="./accounts/index.php?action=login" title="Login or Register with PHP Motors">My Account</a>';
 $myLogoutLink = "<a id='myLogout' href='./accounts/index.php?action=logout' title='Log Out PHP Motors'>Log Out</a>";
 

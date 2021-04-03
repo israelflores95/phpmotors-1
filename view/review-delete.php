@@ -38,7 +38,6 @@ if (!isset($_SESSION['loggedin'])) {
             ?>
         </nav>
         <main>
-            <h1>Review Delete Page</h1>
             <h1>Delete <?php echo $_SESSION['oneReviewData']['invMake'] . " " . $_SESSION['oneReviewData']['invModel'] ?> Review</h1>
             <p>Reviewed on <?php echo $_SESSION['oneReviewData']['reviewDate'] ?></p>
             <?php

@@ -26,9 +26,6 @@ function createNavBar($carClassifications)
         $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName=" . urlencode($classification['classificationName']) . "' 
         title='View our $classification[classificationName] lineup of vehicles'>
         $classification[classificationName]</a></li>";
-        //     $navList .= "<li><a href='/phpmotors/index.php?action=" . urlencode($classification['classificationName']) . "' 
-        // title='View our $classification[classificationName] product line'>
-        // $classification[classificationName]</a></li>";
     }
     $navList .= '</ul>';
 

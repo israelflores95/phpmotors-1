@@ -37,7 +37,6 @@ if (!isset($_SESSION['loggedin'])) {
             ?>
         </nav>
         <main>
-            <h1>Review Edit Page</h1>
             <h1><?php echo $_SESSION['oneReviewData']['invMake'] . " " . $_SESSION['oneReviewData']['invModel']; ?> Review</h1>
 
             <?php
@@ -61,7 +60,6 @@ if (!isset($_SESSION['loggedin'])) {
                                                             } ?>>
                     <input type="hidden" name="action" value="edit-click">
                 </form>
-                <p>invId: <?php echo $reviewId ?></p>
             </div>
 
         </main>

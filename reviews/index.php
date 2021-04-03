@@ -38,8 +38,6 @@ switch ($action) {
         $d = strtotime("now");
         $reviewDate = date("Y-m-d H:i:s", $d);
 
-        // $pageInvId = filter_input(INPUT_GET, 'invId', FILTER_SANITIZE_NUMBER_INT);
-
         // display the form again, so they can submit another review if they want
         $reviewForm = createReviewForm($screenName, $invId, $clientId);
 
@@ -65,12 +63,6 @@ switch ($action) {
             $specificVehicleReviewData = getSpecificVehicleReviews($invId);
             $reviewList = createReviewList($specificVehicleReviewData);
             $_SESSION['reviewList'] =  $reviewList;
-
-            // $specificVehicleReviewData = getSpecificVehicleReviews($invId);
-            // $_SESSION['reviewData'] =  $specificVehicleReviewData;
-            // $reviewList = createReviewList($specificVehicleReviewData);
-
-            // $_SESSION['specificVehicleReviewData'] = $specificVehicleReviewData;
 
             include '../view/vehicle-detail.php';
             exit;
@@ -122,10 +114,7 @@ switch ($action) {
         if ($updateReview === 1) {
             $message = "<p style='color:green;' class='notify'>Congratulations, the review was successfully updated.</p>";
             $_SESSION['message'] = $message;
-            // $_SESSION['clientData']['clientFirstname'] =  $clientFirstname;
-            // $_SESSION['clientData']['clientLastname'] =  $clientLastname;
-            // $_SESSION['clientData']['clientEmail'] =  $clientEmail;
-            // header('location: /phpmotors/accounts/');
+        
             include '../view/admin.php';
             exit;
         } else {

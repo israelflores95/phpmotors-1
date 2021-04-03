@@ -87,8 +87,6 @@ if (!isset($_SESSION['loggedin'])) {
             <div>
                 <h2>Manage Your Product Reviews</h2>
                 <?php
-                // echo $clientFullname;
-                // echo var_dump($_SESSION['clientData']['clientId']); // for testing purpose
                 if (isset($_SESSION['clientReviewList'])) {
                     echo $_SESSION['clientReviewList'];
                 }

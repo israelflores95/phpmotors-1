@@ -18,7 +18,7 @@
                 echo $myLogoutLink;
                 require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php';
 
-                echo "<span><a href = '/phpmotors/accounts'>Welcome " . $_SESSION['clientData']['clientFirstname'] . "</a></span>";
+                echo "<span><a href = '/phpmotors/accounts' id='welcome-client'>Welcome " . $_SESSION['clientData']['clientFirstname'] . "</a></span>";
             } else {
                 echo $myAccountLink;
                 require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/header.php';

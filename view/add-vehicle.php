@@ -70,8 +70,6 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
                     // echo $dropdownList;
                     echo $classificationList;
                     ?>
-                    <!-- <option value="Hi">Hi</option> -->
-                    <!-- </select> -->
                     <br><br>
 
 

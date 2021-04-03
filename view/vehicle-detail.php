@@ -73,9 +73,6 @@
                 if (isset($submitMessage)) {
                     echo $submitMessage;
                 }
-                // if (isset($_SESSION['submitMessage'])) {
-                //     echo $_SESSION['submitMessage'];
-                // }
                 ?>
 
                 <?php if (isset($reviewForm)) {

@@ -20,16 +20,6 @@ $classifications = getClassifications();
 // new way, create the nav bar in the functions.php which can be used by all controllers
 $navList = createNavBar($classifications);
 
-// build a navigation bar using the $classifications array => old way
-// $navList = '<ul>';
-// $navList .= "<li><a href='/phpmotors/index.php' title='View the PHP Motors home page'>Home</a></li>";
-// foreach ($classifications as $classification) {
-//     $navList .= "<li><a href='/phpmotors/index.php?action=" . urlencode($classification['classificationName']) . "' 
-//     title='View our $classification[classificationName] product line'>
-//     $classification[classificationName]</a></li>";
-// }
-// $navList .= '</ul>';
-
 $registrationPageLink = "<a href='index.php?action=registration' title='Registration Page'>Not a member yet?</a>";
 $myAccountLink = "<a id='myAccount' href='index.php?action=login' title='Login or Register with PHP Motors'>My Account</a>";
 $myLogoutLink = "<a id='myLogout' href='index.php?action=logout' title='Log Out PHP Motors'>Log Out</a>";
@@ -87,18 +77,6 @@ switch ($action) {
 
         break;
     case 'login': // submit the form, we have this hidden in our login.php
-        // $loginEmail = filter_input(INPUT_POST, 'loginEmail', FILTER_SANITIZE_EMAIL);
-        // $loginPassword = filter_input(INPUT_POST, 'loginPassword', FILTER_SANITIZE_STRING);
-
-        // $loginEmail = checkEmail($loginEmail); // go to the functions.php to validate the email address
-        // $checkPassword = checkPassword($loginPassword); // go to the functions.php to validate the password, what is returned from the function is "1" if the password matches the format and a "0" (zero) if it doesn't.
-
-        // // Check for missing data
-        // if (empty($loginEmail) || empty($checkPassword)) {
-        //     $message = '<p style="color:red;">Please provide information for all empty form fields.</p>';
-        //     include '../view/login.php';
-        //     exit;
-        // }
 
         $clientEmail = filter_input(INPUT_POST, 'clientEmail', FILTER_SANITIZE_EMAIL);
         $clientEmail = checkEmail($clientEmail);
@@ -115,17 +93,6 @@ switch ($action) {
         // A valid password exists, proceed with the login process
         // Query the client data based on the email address
         $clientData = getClient($clientEmail);
-
-        // // Compare the password just submitted against
-        // // the hashed password for the matching client
-        // $hashCheck = password_verify($clientPassword, $clientData['clientPassword']);
-        // // If the hashes don't match create an error
-        // // and return to the login view
-        // if (!$hashCheck) {
-        //     $message = '<p class="notice">Please check your password and try again.</p>';
-        //     include '../view/login.php';
-        //     exit;
-        // }
 
         // A valid user exists, log them in
         $_SESSION['loggedin'] = TRUE;

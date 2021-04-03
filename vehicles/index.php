@@ -29,14 +29,6 @@ $myAccountLink = '<a id="myAccount" href="../accounts/index.php?action=login" ti
 $myLogoutLink = "<a id='myLogout' href='../accounts/index.php?action=logout' title='Log Out PHP Motors'>Log Out</a>";
 // $selectedCar = $_POST['carClassification'];
 
-
-// this is for the "add-vehicle" page's dropdown list
-// $dropdownList = "";
-// foreach ($classifications as $classification) {
-//     $option = urlencode($classification['classificationName']);
-//     $dropdownList .= "<option value='$option'>$option</option>";
-// }
-
 $action = filter_input(INPUT_GET, 'action');
 if ($action == NULL) {
     $action = filter_input(INPUT_POST, 'action');
