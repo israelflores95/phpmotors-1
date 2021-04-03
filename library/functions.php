@@ -99,7 +99,7 @@ function displaySpecificVehicleThumbnail($imgInfo)
 // create a review list for specific vehicle
 function createReviewList($specificVehicleReviewData)
 {
-    $reviewList = '<div class="reviewList-display">';
+    $reviewList = '<div style="border: 1px solid black; padding: 5px; margin: 5px;">';
 
     foreach ($specificVehicleReviewData as $eachReview) {
         $clientFullname = substr($eachReview['clientFirstname'], 0, 1) . $eachReview['clientLastname'];

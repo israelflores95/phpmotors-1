@@ -38,8 +38,12 @@ if (!isset($_SESSION['loggedin'])) {
             ?>
         </nav>
         <main>
-            <h1>Delete <?php echo $_SESSION['oneReviewData']['invMake'] . " " . $_SESSION['oneReviewData']['invModel'] ?> Review</h1>
-            <p>Reviewed on <?php echo $_SESSION['oneReviewData']['reviewDate'] ?></p>
+            <h1>Delete <?php if (isset($_SESSION['oneReviewData'])) {
+                            echo $_SESSION['oneReviewData']['invMake'] . " " . $_SESSION['oneReviewData']['invModel'];
+                        } ?> Review</h1>
+            <p>Reviewed on <?php if (isset($_SESSION['oneReviewData']['reviewDate'])) {
+                                echo $_SESSION['oneReviewData']['reviewDate'];
+                            } ?></p>
             <?php
             if (isset($message)) {
                 echo $message;
@@ -51,7 +55,9 @@ if (!isset($_SESSION['loggedin'])) {
                     <fieldset>
                         <legend>Delete Review</legend>
                         <p>Review Text</p>
-                        <p style="background-color:#4c96d7;"><?php echo $_SESSION['oneReviewData']['reviewText'] ?></p>
+                        <p style="background-color:#4c96d7;"><?php if (isset($_SESSION['oneReviewData']['reviewText'])) {
+                                                                    echo $_SESSION['oneReviewData']['reviewText'];
+                                                                } ?></p>
                         <!-- <a id="signInButton">Delete</a> -->
                         <input type="submit" name="submit" value="Delete" id="signInButton">
                         <input type="hidden" name="reviewId" <?php if (isset($reviewId)) {

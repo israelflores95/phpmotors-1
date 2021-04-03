@@ -69,7 +69,7 @@
                 }
                 ?>
 
-                <?php 
+                <?php
                 if (isset($submitMessage)) {
                     echo $submitMessage;
                 }
@@ -83,14 +83,15 @@
             </div>
 
             <?php
-            // echo var_dump($_SESSION['reviewList']); //this can be used for testing!
-            if (isset($_SESSION['reviewList'])) {
-                echo $_SESSION['reviewList'];
-            }
 
             // $specificVehicleReviewData is the result we got by writing SQL code, if it is empty, that means there isn't any review for this vehicle. Therefore, display the message!
             if (empty($specificVehicleReviewData)) {
                 echo '<p style="color: blue;">Be the first client to write the review!</p>';
+            } else {
+                // echo var_dump($_SESSION['reviewList']); //this can be used for testing!
+                if (isset($_SESSION['reviewList'])) {
+                    echo $_SESSION['reviewList'];
+                }
             }
             ?>
 
