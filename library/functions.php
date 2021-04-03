@@ -103,7 +103,7 @@ function createReviewList($specificVehicleReviewData)
 
     foreach ($specificVehicleReviewData as $eachReview) {
         $clientFullname = substr($eachReview['clientFirstname'], 0, 1) . $eachReview['clientLastname'];
-        $reviewList .= '<div style="background-color: lightblue;">';
+        $reviewList .= '<div style="background-color: #4c96d7;">';
         $reviewList .= "<p>$clientFullname wrote on $eachReview[reviewDate] </p>";
         $reviewList .= "<h2>Review: $eachReview[reviewText] </h2>";
         $reviewList .= '</div>';
@@ -138,6 +138,8 @@ function createClientReviewList($specificClientReviewData)
 function createReviewForm($clientName, $invId, $clientId) {
 
     $reviewForm = '<form action="/phpmotors/reviews/index.php" method="post">';
+    $reviewForm .= '<fieldset>';
+    $reviewForm .= '<legend>Review:</legend>';
     $reviewForm .= '<label for="screenName">Screen Name</label><br>';
     $reviewForm .= "<input type='text' id='screenName' name='screenName' value='$clientName' required readonly><br>";
     $reviewForm .= '<label for="reviewText">Review</label><br>';
@@ -146,6 +148,7 @@ function createReviewForm($clientName, $invId, $clientId) {
     $reviewForm .= "<input type='hidden' name='invId' value='$invId'>";
     $reviewForm .= "<input type='hidden' name='clientId' value='$clientId'>";
     $reviewForm .= '<input type="hidden" name="action" value="submit-review">';
+    $reviewForm .= '</fieldset>';
     $reviewForm .= '</form>';
 
     return $reviewForm;

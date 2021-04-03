@@ -161,6 +161,12 @@ li a:hover {
     border: none;
 }
 
+.reviewList-display {
+    border: 1px solid black;
+    padding: 5px;
+    margin: 5px;
+}
+
 /* for "add-classification page" */
 .addClassificationForm {
     margin: 5px 10px;

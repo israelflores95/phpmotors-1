@@ -46,16 +46,19 @@ if (!isset($_SESSION['loggedin'])) {
             }
             ?>
 
-            <div style="border: 2px solid black;">
+            <div>
                 <form action="/phpmotors/reviews/index.php" method="post">
-                    <p>Review Text</p>
-                    <p style="background-color:lightgoldenrodyellow;"><?php echo $_SESSION['oneReviewData']['reviewText'] ?></p>
-                    <!-- <a id="signInButton">Delete</a> -->
-                    <input type="submit" name="submit" value="Delete" id="signInButton">
-                    <input type="hidden" name="reviewId" <?php if (isset($reviewId)) {
-                                                                echo "value='$reviewId'";
-                                                            } ?>>
-                    <input type="hidden" name="action" value="delete-click">
+                    <fieldset>
+                        <legend>Delete Review</legend>
+                        <p>Review Text</p>
+                        <p style="background-color:#4c96d7;"><?php echo $_SESSION['oneReviewData']['reviewText'] ?></p>
+                        <!-- <a id="signInButton">Delete</a> -->
+                        <input type="submit" name="submit" value="Delete" id="signInButton">
+                        <input type="hidden" name="reviewId" <?php if (isset($reviewId)) {
+                                                                    echo "value='$reviewId'";
+                                                                } ?>>
+                        <input type="hidden" name="action" value="delete-click">
+                    </fieldset>
                 </form>
             </div>
 

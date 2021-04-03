@@ -49,16 +49,19 @@ if (!isset($_SESSION['loggedin'])) {
             <div>
 
                 <form action="/phpmotors/reviews/index.php" method="post">
-                    <label for="updateReviewText">Review Text</label><br>
-                    <textarea id="updateReviewText" name="updateReviewText" required><?php if (isset($_SESSION['oneReviewData']['reviewText'])) {
-                                                                                            echo $_SESSION['oneReviewData']['reviewText'];
-                                                                                        } ?></textarea><br>
-                    <input type="submit" name="submit" value="Update" id="signInButton"><br>
-                    <!-- Add the action name - value pair -->
-                    <input type="hidden" name="reviewId" <?php if (isset($reviewId)) {
-                                                                echo "value='$reviewId'";
-                                                            } ?>>
-                    <input type="hidden" name="action" value="edit-click">
+                    <fieldset>
+                    <legend>Update Review</legend>
+                        <label for="updateReviewText">Review Text</label><br>
+                        <textarea id="updateReviewText" name="updateReviewText" required><?php if (isset($_SESSION['oneReviewData']['reviewText'])) {
+                                                                                                echo $_SESSION['oneReviewData']['reviewText'];
+                                                                                            } ?></textarea><br>
+                        <input type="submit" name="submit" value="Update" id="signInButton"><br>
+                        <!-- Add the action name - value pair -->
+                        <input type="hidden" name="reviewId" <?php if (isset($reviewId)) {
+                                                                    echo "value='$reviewId'";
+                                                                } ?>>
+                        <input type="hidden" name="action" value="edit-click">
+                    </fieldset>
                 </form>
             </div>
 
